@@ -12,8 +12,8 @@ namespace CompilJeux
     {
         public int valeur { get; set; }
         public couleurs couleur { get; set; }
-        private Bitmap imagecarte;
-        private int puissance; 
+        public Bitmap imagecarte;
+        public int puissance; 
 
         public enum couleurs
         {

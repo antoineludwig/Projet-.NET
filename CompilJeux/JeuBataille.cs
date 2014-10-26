@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CompilJeux
 {
-    class JeuBataille
+    public class JeuBataille
     {
         public PaquetCarte jeu1;
         public PaquetCarte jeu2;

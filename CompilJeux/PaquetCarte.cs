@@ -77,7 +77,7 @@ namespace CompilJeux
             return cartes.Count();
         }
 
-        public Carte chercherEtRetirerCarte(Carte carteCherchée)
+        public Carte ChercherEtRetirerCarte(Carte carteCherchée)
         {
             if (cartes.Contains(carteCherchée))
             {

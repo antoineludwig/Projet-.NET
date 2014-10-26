@@ -12,6 +12,8 @@ namespace CompilJeux
 {
     public partial class Bataille : Form
     {
+        public JeuBataille nouveauJeu = new JeuBataille();
+
         public Bataille()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace CompilJeux
 
         private void Bataille_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void NbCartesJ1_Click(object sender, EventArgs e)
@@ -29,7 +31,8 @@ namespace CompilJeux
 
         private void JeuJoueur1_Click(object sender, EventArgs e)
         {
-
+            Carte carteTirée = nouveauJeu.jeu1.TirerCarte();
+            CarteJouee1.BackgroundImage = carteTirée.imagecarte;
         }
 
         private void NbCarteJ2_Click(object sender, EventArgs e)
@@ -40,7 +43,8 @@ namespace CompilJeux
 
         private void JeuJoueur2_Click(object sender, EventArgs e)
         {
-
+            Carte carteTirée = nouveauJeu.jeu2.TirerCarte();
+            CarteJouee2.BackgroundImage = carteTirée.imagecarte;
         }
     }
 }

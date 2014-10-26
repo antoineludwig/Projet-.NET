@@ -103,7 +103,7 @@ namespace UnitTestCompilJeux
         }
 
         [TestMethod]
-        public void TestchercherEtRetirerCarte()
+        public void TestChercherEtRetirerCarte()
         {
 
             //initialisations

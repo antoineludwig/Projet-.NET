@@ -45,7 +45,7 @@
             this.JeuJoueur1.BackgroundImage = global::CompilJeux.Properties.Resources.dos_01_img;
             this.JeuJoueur1.Location = new System.Drawing.Point(303, 470);
             this.JeuJoueur1.Name = "JeuJoueur1";
-            this.JeuJoueur1.Size = new System.Drawing.Size(180, 180);
+            this.JeuJoueur1.Size = new System.Drawing.Size(180, 175);
             this.JeuJoueur1.TabIndex = 0;
             this.JeuJoueur1.TabStop = false;
             this.JeuJoueur1.Click += new System.EventHandler(this.JeuJoueur1_Click);
@@ -55,7 +55,7 @@
             this.JeuJoueur2.BackgroundImage = global::CompilJeux.Properties.Resources.dos_01_img;
             this.JeuJoueur2.Location = new System.Drawing.Point(303, 12);
             this.JeuJoueur2.Name = "JeuJoueur2";
-            this.JeuJoueur2.Size = new System.Drawing.Size(180, 180);
+            this.JeuJoueur2.Size = new System.Drawing.Size(180, 175);
             this.JeuJoueur2.TabIndex = 1;
             this.JeuJoueur2.TabStop = false;
             this.JeuJoueur2.Click += new System.EventHandler(this.JeuJoueur2_Click);
@@ -64,7 +64,7 @@
             // 
             this.CarteJouee1.Location = new System.Drawing.Point(208, 241);
             this.CarteJouee1.Name = "CarteJouee1";
-            this.CarteJouee1.Size = new System.Drawing.Size(180, 180);
+            this.CarteJouee1.Size = new System.Drawing.Size(180, 175);
             this.CarteJouee1.TabIndex = 2;
             this.CarteJouee1.TabStop = false;
             // 
@@ -72,7 +72,7 @@
             // 
             this.CarteJouee2.Location = new System.Drawing.Point(394, 241);
             this.CarteJouee2.Name = "CarteJouee2";
-            this.CarteJouee2.Size = new System.Drawing.Size(180, 180);
+            this.CarteJouee2.Size = new System.Drawing.Size(180, 175);
             this.CarteJouee2.TabIndex = 3;
             this.CarteJouee2.TabStop = false;
             // 
