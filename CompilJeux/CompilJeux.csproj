@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBB19012-56C4-48B4-9139-5C3D7BE923FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompilJeux</RootNamespace>
+    <AssemblyName>CompilJeux</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bataille.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bataille.Designer.cs">
+      <DependentUpon>Bataille.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carte.cs" />
+    <Compile Include="JeuBataille.cs" />
+    <Compile Include="MenuGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuGeneral.Designer.cs">
+      <DependentUpon>MenuGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaquetCarte.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bataille.resx">
+      <DependentUpon>Bataille.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGeneral.resx">
+      <DependentUpon>MenuGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\01-carreau-img.png" />
+    <EmbeddedResource Include="res\01-coeur-img.png" />
+    <EmbeddedResource Include="res\01-pique-img.png" />
+    <EmbeddedResource Include="res\01-trefle-img.png" />
+    <EmbeddedResource Include="res\02-carreau-img.png" />
+    <EmbeddedResource Include="res\02-coeur-img.png" />
+    <EmbeddedResource Include="res\02-pique-img.png" />
+    <EmbeddedResource Include="res\02-trefle-img.png" />
+    <EmbeddedResource Include="res\03-carreau-img.png" />
+    <EmbeddedResource Include="res\03-coeur-img.png" />
+    <EmbeddedResource Include="res\03-pique-img.png" />
+    <EmbeddedResource Include="res\03-trefle-img.png" />
+    <EmbeddedResource Include="res\04-carreau-img.png" />
+    <EmbeddedResource Include="res\04-coeur-img.png" />
+    <EmbeddedResource Include="res\04-pique-img.png" />
+    <EmbeddedResource Include="res\04-trefle-img.png" />
+    <EmbeddedResource Include="res\05-carreau-img.png" />
+    <EmbeddedResource Include="res\05-coeur-img.png" />
+    <EmbeddedResource Include="res\05-pique-img.png" />
+    <EmbeddedResource Include="res\05-trefle-img.png" />
+    <EmbeddedResource Include="res\06-carreau-img.png" />
+    <EmbeddedResource Include="res\06-coeur-img.png" />
+    <EmbeddedResource Include="res\06-pique-img.png" />
+    <EmbeddedResource Include="res\06-trefle-img.png" />
+    <EmbeddedResource Include="res\07-carreau-img.png" />
+    <EmbeddedResource Include="res\07-coeur-img.png" />
+    <EmbeddedResource Include="res\07-pique-img.png" />
+    <EmbeddedResource Include="res\07-trefle-img.png" />
+    <EmbeddedResource Include="res\08-carreau-img.png" />
+    <EmbeddedResource Include="res\08-coeur-img.png" />
+    <EmbeddedResource Include="res\08-pique-img.png" />
+    <EmbeddedResource Include="res\08-trefle-img.png" />
+    <EmbeddedResource Include="res\09-carreau-img.png" />
+    <EmbeddedResource Include="res\09-coeur-img.png" />
+    <EmbeddedResource Include="res\09-pique-img.png" />
+    <EmbeddedResource Include="res\09-trefle-img.png" />
+    <EmbeddedResource Include="res\10-carreau-img.png" />
+    <EmbeddedResource Include="res\10-coeur-img.png" />
+    <EmbeddedResource Include="res\10-pique-img.png" />
+    <EmbeddedResource Include="res\10-trefle-img.png" />
+    <EmbeddedResource Include="res\D-carreau-img.png" />
+    <EmbeddedResource Include="res\D-coeur-img.png" />
+    <EmbeddedResource Include="res\D-pique-img.png" />
+    <EmbeddedResource Include="res\D-trefle-img.png" />
+    <EmbeddedResource Include="res\dos-01-img.png" />
+    <EmbeddedResource Include="res\joker-noir-img.png" />
+    <EmbeddedResource Include="res\joker-rouge-img.png" />
+    <EmbeddedResource Include="res\R-carreau-img.png" />
+    <EmbeddedResource Include="res\R-coeur-img.png" />
+    <EmbeddedResource Include="res\R-pique-img.png" />
+    <EmbeddedResource Include="res\R-trefle-img.png" />
+    <EmbeddedResource Include="res\V-carreau-img.png" />
+    <EmbeddedResource Include="res\V-coeur-img.png" />
+    <EmbeddedResource Include="res\V-pique-img.png" />
+    <EmbeddedResource Include="res\V-trefle-img.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
