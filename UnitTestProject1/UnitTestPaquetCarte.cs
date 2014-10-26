@@ -72,6 +72,13 @@ namespace UnitTestCompilJeux
                     carteTrouvée = true;
             Assert.IsFalse(carteTrouvée,"Carte toujours dans le paquet");
 
+            for (int i = 1; i <= 51; i++) 
+            {
+                p.TirerCarte();
+            }
+
+            Assert.IsNull(p.TirerCarte(),"Plus de carte dans le paquet");
+
         }
 
         [TestMethod]

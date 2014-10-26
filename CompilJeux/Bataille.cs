@@ -12,7 +12,7 @@ namespace CompilJeux
 {
     public partial class Bataille : Form
     {
-        public JeuBataille nouveauJeu = new JeuBataille();
+        public JeuBataille nouveauJeu = new JeuBataille(1);
 
         public Bataille()
         {
@@ -32,7 +32,7 @@ namespace CompilJeux
         private void JeuJoueur1_Click(object sender, EventArgs e)
         {
             Carte carteTirée = nouveauJeu.jeu1.TirerCarte();
-            CarteJouee1.BackgroundImage = carteTirée.imagecarte;
+            
         }
 
         private void NbCarteJ2_Click(object sender, EventArgs e)

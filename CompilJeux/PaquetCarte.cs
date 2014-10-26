@@ -58,9 +58,14 @@ namespace CompilJeux
 
         public Carte TirerCarte()
         {
-            Carte carteTirée = new Carte(cartes[0]);
-            cartes.RemoveAt(0);
-            return carteTirée;
+            if (cartes.Count > 0)
+            {
+                Carte carteTirée = new Carte(cartes[0]);
+                cartes.RemoveAt(0);
+                return carteTirée;
+            }
+
+            return null;
         }
 
         public void AjouterCarteFin(Carte nouvelleCarte)
