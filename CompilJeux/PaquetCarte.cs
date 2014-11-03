@@ -36,6 +36,16 @@ namespace CompilJeux
             }
         }
 
+        public PaquetCarte(PaquetCarte pc)
+        {
+            cartes = new List<Carte> (pc.cartes);
+        }
+
+        public PaquetCarte(List<Carte> liste)
+        {
+            cartes = new List<Carte>(liste);
+        }
+
         public void DebugAfficheCartes()
         {
             foreach (Carte c in cartes)
@@ -96,6 +106,19 @@ namespace CompilJeux
             return null;
         }
 
+        public List<PaquetCarte> Couper()
+        {
+            List<PaquetCarte> lesjeux = new List<PaquetCarte>();
+            
+            List<Carte> cartes1 = new List<Carte>(cartes.GetRange(0, 25));
+            List<Carte> cartes2 = new List<Carte>(cartes.GetRange(26, 51));
 
+            PaquetCarte jeu1 = new PaquetCarte(cartes1);
+            PaquetCarte jeu2 = new PaquetCarte(cartes2);
+            lesjeux.Add(jeu1);
+            lesjeux.Add(jeu2);
+
+            return (lesjeux);
+        }
     }
 }

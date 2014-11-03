@@ -33,7 +33,9 @@
             this.CarteJouee1 = new System.Windows.Forms.PictureBox();
             this.CarteJouee2 = new System.Windows.Forms.PictureBox();
             this.NbCartesJ1 = new System.Windows.Forms.Label();
-            this.NbCarteJ2 = new System.Windows.Forms.Label();
+            this.NbCartesJ2 = new System.Windows.Forms.Label();
+            this.TourSuivant = new System.Windows.Forms.Button();
+            this.Gagnant = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.JeuJoueur1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JeuJoueur2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CarteJouee1)).BeginInit();
@@ -87,23 +89,44 @@
             this.NbCartesJ1.Text = "00";
             this.NbCartesJ1.Click += new System.EventHandler(this.NbCartesJ1_Click);
             // 
-            // NbCarteJ2
+            // NbCartesJ2
             // 
-            this.NbCarteJ2.AutoSize = true;
-            this.NbCarteJ2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NbCarteJ2.Location = new System.Drawing.Point(374, 127);
-            this.NbCarteJ2.Name = "NbCarteJ2";
-            this.NbCarteJ2.Size = new System.Drawing.Size(34, 24);
-            this.NbCarteJ2.TabIndex = 5;
-            this.NbCarteJ2.Text = "00";
-            this.NbCarteJ2.Click += new System.EventHandler(this.NbCarteJ2_Click);
+            this.NbCartesJ2.AutoSize = true;
+            this.NbCartesJ2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NbCartesJ2.Location = new System.Drawing.Point(374, 127);
+            this.NbCartesJ2.Name = "NbCartesJ2";
+            this.NbCartesJ2.Size = new System.Drawing.Size(34, 24);
+            this.NbCartesJ2.TabIndex = 5;
+            this.NbCartesJ2.Text = "00";
+            this.NbCartesJ2.Click += new System.EventHandler(this.NbCarteJ2_Click);
+            // 
+            // TourSuivant
+            // 
+            this.TourSuivant.Location = new System.Drawing.Point(602, 310);
+            this.TourSuivant.Name = "TourSuivant";
+            this.TourSuivant.Size = new System.Drawing.Size(126, 42);
+            this.TourSuivant.TabIndex = 6;
+            this.TourSuivant.Text = "Tour suivant";
+            this.TourSuivant.UseVisualStyleBackColor = true;
+            // 
+            // Gagnant
+            // 
+            this.Gagnant.AutoSize = true;
+            this.Gagnant.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gagnant.ForeColor = System.Drawing.Color.Red;
+            this.Gagnant.Location = new System.Drawing.Point(597, 366);
+            this.Gagnant.Name = "Gagnant";
+            this.Gagnant.Size = new System.Drawing.Size(0, 27);
+            this.Gagnant.TabIndex = 7;
             // 
             // Bataille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 662);
-            this.Controls.Add(this.NbCarteJ2);
+            this.Controls.Add(this.Gagnant);
+            this.Controls.Add(this.TourSuivant);
+            this.Controls.Add(this.NbCartesJ2);
             this.Controls.Add(this.NbCartesJ1);
             this.Controls.Add(this.CarteJouee2);
             this.Controls.Add(this.CarteJouee1);
@@ -123,11 +146,13 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox JeuJoueur1;
-        private System.Windows.Forms.PictureBox JeuJoueur2;
-        private System.Windows.Forms.PictureBox CarteJouee1;
-        private System.Windows.Forms.PictureBox CarteJouee2;
-        private System.Windows.Forms.Label NbCartesJ1;
-        private System.Windows.Forms.Label NbCarteJ2;
+        public System.Windows.Forms.PictureBox JeuJoueur1;
+        public System.Windows.Forms.PictureBox JeuJoueur2;
+        public System.Windows.Forms.PictureBox CarteJouee1;
+        public System.Windows.Forms.PictureBox CarteJouee2;
+        public System.Windows.Forms.Label NbCartesJ1;
+        public System.Windows.Forms.Label NbCartesJ2;
+        public System.Windows.Forms.Button TourSuivant;
+        public System.Windows.Forms.Label Gagnant;
     }
 }

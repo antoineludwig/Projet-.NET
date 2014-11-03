@@ -31,8 +31,7 @@ namespace CompilJeux
 
         private void JeuJoueur1_Click(object sender, EventArgs e)
         {
-            Carte carteTirée = nouveauJeu.jeu1.TirerCarte();
-            
+            nouveauJeu.jeu1.TirerCarte(); 
         }
 
         private void NbCarteJ2_Click(object sender, EventArgs e)
