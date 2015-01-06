@@ -34,8 +34,8 @@
             this.CarteJouee2 = new System.Windows.Forms.PictureBox();
             this.NbCartesJ1 = new System.Windows.Forms.Label();
             this.NbCartesJ2 = new System.Windows.Forms.Label();
-            this.TourSuivant = new System.Windows.Forms.Button();
             this.Gagnant = new System.Windows.Forms.Label();
+            this.Simulation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.JeuJoueur1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JeuJoueur2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CarteJouee1)).BeginInit();
@@ -64,7 +64,7 @@
             // 
             // CarteJouee1
             // 
-            this.CarteJouee1.Location = new System.Drawing.Point(208, 241);
+            this.CarteJouee1.Location = new System.Drawing.Point(208, 252);
             this.CarteJouee1.Name = "CarteJouee1";
             this.CarteJouee1.Size = new System.Drawing.Size(180, 175);
             this.CarteJouee1.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // CarteJouee2
             // 
-            this.CarteJouee2.Location = new System.Drawing.Point(394, 241);
+            this.CarteJouee2.Location = new System.Drawing.Point(394, 231);
             this.CarteJouee2.Name = "CarteJouee2";
             this.CarteJouee2.Size = new System.Drawing.Size(180, 175);
             this.CarteJouee2.TabIndex = 3;
@@ -100,32 +100,34 @@
             this.NbCartesJ2.Text = "00";
             this.NbCartesJ2.Click += new System.EventHandler(this.NbCarteJ2_Click);
             // 
-            // TourSuivant
-            // 
-            this.TourSuivant.Location = new System.Drawing.Point(602, 310);
-            this.TourSuivant.Name = "TourSuivant";
-            this.TourSuivant.Size = new System.Drawing.Size(126, 42);
-            this.TourSuivant.TabIndex = 6;
-            this.TourSuivant.Text = "Tour suivant";
-            this.TourSuivant.UseVisualStyleBackColor = true;
-            // 
             // Gagnant
             // 
             this.Gagnant.AutoSize = true;
             this.Gagnant.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gagnant.ForeColor = System.Drawing.Color.Red;
-            this.Gagnant.Location = new System.Drawing.Point(597, 366);
+            this.Gagnant.Location = new System.Drawing.Point(391, 435);
             this.Gagnant.Name = "Gagnant";
             this.Gagnant.Size = new System.Drawing.Size(0, 27);
             this.Gagnant.TabIndex = 7;
+            this.Gagnant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Simulation
+            // 
+            this.Simulation.Location = new System.Drawing.Point(596, 518);
+            this.Simulation.Name = "Simulation";
+            this.Simulation.Size = new System.Drawing.Size(121, 47);
+            this.Simulation.TabIndex = 8;
+            this.Simulation.Text = "Simulation";
+            this.Simulation.UseVisualStyleBackColor = true;
+            this.Simulation.Click += new System.EventHandler(this.Simulation_Click);
             // 
             // Bataille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 662);
+            this.Controls.Add(this.Simulation);
             this.Controls.Add(this.Gagnant);
-            this.Controls.Add(this.TourSuivant);
             this.Controls.Add(this.NbCartesJ2);
             this.Controls.Add(this.NbCartesJ1);
             this.Controls.Add(this.CarteJouee2);
@@ -134,6 +136,7 @@
             this.Controls.Add(this.JeuJoueur1);
             this.Name = "Bataille";
             this.Text = "Bataille";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Bataille_FormClosed);
             this.Load += new System.EventHandler(this.Bataille_Load);
             ((System.ComponentModel.ISupportInitialize)(this.JeuJoueur1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JeuJoueur2)).EndInit();
@@ -152,7 +155,7 @@
         public System.Windows.Forms.PictureBox CarteJouee2;
         public System.Windows.Forms.Label NbCartesJ1;
         public System.Windows.Forms.Label NbCartesJ2;
-        public System.Windows.Forms.Button TourSuivant;
         public System.Windows.Forms.Label Gagnant;
+        private System.Windows.Forms.Button Simulation;
     }
 }

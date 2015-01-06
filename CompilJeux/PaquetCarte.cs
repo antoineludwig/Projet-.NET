@@ -46,12 +46,18 @@ namespace CompilJeux
             cartes = new List<Carte>(liste);
         }
 
+        /**
+         * Affichage des cartes
+         * */
         public void DebugAfficheCartes()
         {
             foreach (Carte c in cartes)
                 c.DebugAffiche();
         }
 
+        /**
+         * Mélange des cartes
+         * */
         public void MelangerPaquet()
         {
             Random rng = new Random();
@@ -66,6 +72,9 @@ namespace CompilJeux
             }  
         }
 
+        /**
+         * Tirer une carte
+         * */
         public Carte TirerCarte()
         {
             if (cartes.Count > 0)
@@ -78,6 +87,9 @@ namespace CompilJeux
             return null;
         }
 
+        /**
+         * Ajouter une carte à la fin
+         * */
         public void AjouterCarteFin(Carte nouvelleCarte)
         {
             if (!cartes.Contains(nouvelleCarte))
@@ -92,6 +104,9 @@ namespace CompilJeux
             return cartes.Count();
         }
 
+        /**
+         * Retirer une carte précise du paquet
+         * */
         public Carte ChercherEtRetirerCarte(Carte carteCherchée)
         {
             if (cartes.Contains(carteCherchée))
@@ -106,12 +121,15 @@ namespace CompilJeux
             return null;
         }
 
+        /**
+         * Coupe le paquet de carte pour le séparer dans 2 jeux de cartes distincts
+         * */
         public List<PaquetCarte> Couper()
         {
             List<PaquetCarte> lesjeux = new List<PaquetCarte>();
             
-            List<Carte> cartes1 = new List<Carte>(cartes.GetRange(0, 25));
-            List<Carte> cartes2 = new List<Carte>(cartes.GetRange(26, 51));
+            List<Carte> cartes1 = new List<Carte>(cartes.GetRange(0, 26));
+            List<Carte> cartes2 = new List<Carte>(cartes.GetRange(26, 26));
 
             PaquetCarte jeu1 = new PaquetCarte(cartes1);
             PaquetCarte jeu2 = new PaquetCarte(cartes2);

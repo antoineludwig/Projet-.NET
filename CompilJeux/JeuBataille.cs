@@ -12,10 +12,14 @@ namespace CompilJeux
         public PaquetCarte jeu;
         public PaquetCarte jeu1;
         public PaquetCarte jeu2;
+        public Carte carteCachée1 = null;
+        public Carte carteCachée2 = null;
+        public Boolean etatBataille = false;
+
         //un joueur : règle=1, 2 joueur règle=2
         public int règle { get; set; }
 
-        public static Dictionary<int,int>listesPuissances = new Dictionary<int,int>();
+        public Dictionary<int,int>listesPuissances = new Dictionary<int,int>();
 
         public JeuBataille(int _règle)
         {
@@ -40,31 +44,56 @@ namespace CompilJeux
             règle = _règle;
         }
 
-        public void TirerCarteJeu()
+        public void TirerCarteJeu(Bataille maBataille)
         {
             Carte carteTirée1;
             Carte carteTirée2;
 
+            //mise à jour affichage nb de cartes des joueurs
+            maBataille.NbCartesJ1.Text = jeu1.getNombreCartes().ToString();
+            maBataille.NbCartesJ2.Text = jeu2.getNombreCartes().ToString();
+
             //règle pour 1 joueur
             if (règle == 1)
             {
-                carteTirée1 = jeu1.TirerCarte();
-                carteTirée2 = jeu2.TirerCarte();
+                //si on est en bataille
+                if (etatBataille)
+                {
+                    //les deux joueurs tire une carte et la cache
+                    carteCachée1 = jeu1.TirerCarte();
+                    maBataille.CarteJouee1.BackgroundImage = CompilJeux.Properties.Resources.dos_01_img;
+                    carteCachée2 = jeu2.TirerCarte();
+                    maBataille.CarteJouee2.BackgroundImage = CompilJeux.Properties.Resources.dos_01_img;
+                    TourSuivant(maBataille);
+                    etatBataille = false;
+                }
+                else
+                {
+                    //chaque joueur pioche une carte
+                    carteTirée1 = jeu1.TirerCarte();
+                    carteTirée2 = jeu2.TirerCarte();
+                    //place les cartes sur la table
+                    maBataille.CarteJouee1.BackgroundImage = carteTirée1.imagecarte;
+                    maBataille.CarteJouee2.BackgroundImage = carteTirée2.imagecarte;
 
-                //test qui a gagné
-                if (carteTirée1.puissance > carteTirée2.puissance)
-                {
-                    Joueur1Gagne(carteTirée1, carteTirée2);
-                }
+                    //test qui a gagné
+                    if (carteTirée1.puissance > carteTirée2.puissance)
+                    {
+                        Joueur1Gagne(carteTirée1, carteTirée2,maBataille);
+                        //maBataille.JeuJoueur1.BackgroundImage = carteTirée1.imagecarte;       
+                    }
 
-                if (carteTirée2.puissance > carteTirée1.puissance)
-                {
-                    Joueur2Gagne(carteTirée1, carteTirée2);
-                }
-                if (carteTirée1.puissance == carteTirée2.puissance)
-                {
-                    BatailleCarte(carteTirée1, carteTirée2);
-                }
+                    if (carteTirée2.puissance > carteTirée1.puissance)
+                    {
+                        Joueur2Gagne(carteTirée1, carteTirée2,maBataille);
+                        //maBataille.JeuJoueur1.BackgroundImage = carteTirée1.imagecarte;  
+                    }
+                    if (carteTirée1.puissance == carteTirée2.puissance)
+                    {
+                        BatailleCarte(maBataille);
+                    }
+                    TourSuivant(maBataille);
+                }    
                     
             }
 
@@ -76,43 +105,59 @@ namespace CompilJeux
 
         }
 
-        public void BatailleCarte(Carte c1, Carte c2)
+        /**
+         * Gestion d'un cas de bataille
+         * */
+        public void BatailleCarte(Bataille b)
         {
-
+            b.Gagnant.Text = "Bataille!";
+            //vérifie si il reste des cartes aux joueurs
+            TourSuivant(b);
+            etatBataille = true;
         }
 
-        public void Joueur1Gagne(Carte c1, Carte c2)
+        public void Joueur1Gagne(Carte c1, Carte c2, Bataille b)
         {
-            vueBataille.Gagnant.Text = "Joueur 1 gagne ce tour!";
-            jeu2.AjouterCarteFin(c1);
-            jeu2.AjouterCarteFin(c2);
-        }
-
-        public void Joueur2Gagne(Carte c1, Carte c2)
-        {
-            vueBataille.Gagnant.Text = "Joueur 2 gagne ce tour!";
+            b.Gagnant.Text = "Joueur 1 gagne ce tour!";
             jeu1.AjouterCarteFin(c1);
             jeu1.AjouterCarteFin(c2);
+            if (carteCachée1 != null && carteCachée2 != null)
+            {
+                jeu1.AjouterCarteFin(carteCachée1);
+                jeu1.AjouterCarteFin(carteCachée2);
+                carteCachée1 = null;
+                carteCachée2 = null;
+            }
+            jeu1.MelangerPaquet();
         }
 
-        public void TourSuivant()
+        public void Joueur2Gagne(Carte c1, Carte c2, Bataille b)
+        {
+            b.Gagnant.Text = "Joueur 2 gagne ce tour!";
+            jeu2.AjouterCarteFin(c1);
+            jeu2.AjouterCarteFin(c2);
+            if (carteCachée1 != null && carteCachée2 != null)
+            {
+                jeu2.AjouterCarteFin(carteCachée1);
+                jeu2.AjouterCarteFin(carteCachée2);
+                carteCachée1 = null;
+                carteCachée2 = null;
+            }
+            jeu2.MelangerPaquet();
+        }
+
+        public void TourSuivant(Bataille b)
         {
             if (jeu1.getNombreCartes() == 0)
-                FinDuJeu("Joueur 1 gagne la partie !");
+                FinDuJeu("Joueur 2 gagne la partie !",b);
             if (jeu2.getNombreCartes() == 0)
-                FinDuJeu("Joueur 2 gagne la partie !");
-
-            vueBataille.JeuJoueur1.BackgroundImage.Dispose();
-            vueBataille.JeuJoueur2.BackgroundImage.Dispose();
-            vueBataille.NbCartesJ1.Text = jeu1.getNombreCartes().ToString();
-            vueBataille.NbCartesJ2.Text = jeu2.getNombreCartes().ToString();
-
+                FinDuJeu("Joueur 1 gagne la partie !",b);
         }
 
-        public void FinDuJeu(String texteVictoire)
+        public void FinDuJeu(String texteVictoire,Bataille b)
         {
             MessageBox.Show(texteVictoire, "Fin du jeu");
-            vueBataille.Close();
+            b.Close();
         }
 
     }

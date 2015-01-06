@@ -12,11 +12,12 @@ namespace CompilJeux
 {
     public partial class Bataille : Form
     {
-        public JeuBataille nouveauJeu = new JeuBataille(1);
+        public JeuBataille nouveauJeu; 
 
         public Bataille()
         {
             InitializeComponent();
+            nouveauJeu = new JeuBataille(1);
         }
 
         private void Bataille_Load(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace CompilJeux
 
         private void JeuJoueur1_Click(object sender, EventArgs e)
         {
-            nouveauJeu.jeu1.TirerCarte(); 
+            nouveauJeu.TirerCarteJeu(this); 
         }
 
         private void NbCarteJ2_Click(object sender, EventArgs e)
@@ -42,8 +43,25 @@ namespace CompilJeux
 
         private void JeuJoueur2_Click(object sender, EventArgs e)
         {
-            Carte carteTirée = nouveauJeu.jeu2.TirerCarte();
-            CarteJouee2.BackgroundImage = carteTirée.imagecarte;
+            /*Carte carteTirée = nouveauJeu.jeu2.TirerCarte();
+            CarteJouee2.BackgroundImage = carteTirée.imagecarte;*/
         }
+
+        private void Simulation_Click(object sender, EventArgs e)
+        {
+            int i=0;
+            while (i < 99 && !this.IsDisposed)
+            {
+                JeuJoueur1_Click(sender, e);
+                i++;
+            }
+        }
+
+        private void Bataille_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            nouveauJeu = null;
+        }
+
+
     }
 }
