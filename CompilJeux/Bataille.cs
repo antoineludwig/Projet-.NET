@@ -43,8 +43,6 @@ namespace CompilJeux
 
         private void JeuJoueur2_Click(object sender, EventArgs e)
         {
-            /*Carte carteTirée = nouveauJeu.jeu2.TirerCarte();
-            CarteJouee2.BackgroundImage = carteTirée.imagecarte;*/
         }
 
         private void Simulation_Click(object sender, EventArgs e)

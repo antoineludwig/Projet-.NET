@@ -53,5 +53,6 @@ namespace CompilJeux
         {
             Debug.Write(valeur + " de " + couleur + " puissance " + puissance + "\n");
         }
+
     }
 }

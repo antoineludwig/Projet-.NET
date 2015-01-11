@@ -31,6 +31,7 @@
             this.Menu = new System.Windows.Forms.MenuStrip();
             this.jeuxDeCartesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.batailleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patienceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // jeuxDeCartesToolStripMenuItem
             // 
             this.jeuxDeCartesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.batailleToolStripMenuItem});
+            this.batailleToolStripMenuItem,
+            this.patienceToolStripMenuItem});
             this.jeuxDeCartesToolStripMenuItem.Name = "jeuxDeCartesToolStripMenuItem";
             this.jeuxDeCartesToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.jeuxDeCartesToolStripMenuItem.Text = "Jeux de cartes";
@@ -58,6 +60,13 @@
             this.batailleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.batailleToolStripMenuItem.Text = "Bataille";
             this.batailleToolStripMenuItem.Click += new System.EventHandler(this.batailleToolStripMenuItem_Click);
+            // 
+            // patienceToolStripMenuItem
+            // 
+            this.patienceToolStripMenuItem.Name = "patienceToolStripMenuItem";
+            this.patienceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patienceToolStripMenuItem.Text = "Patience";
+            this.patienceToolStripMenuItem.Click += new System.EventHandler(this.patienceToolStripMenuItem_Click);
             // 
             // MenuGeneral
             // 
@@ -80,6 +89,7 @@
         private System.Windows.Forms.MenuStrip Menu;
         private System.Windows.Forms.ToolStripMenuItem jeuxDeCartesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem batailleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patienceToolStripMenuItem;
     }
 }
 

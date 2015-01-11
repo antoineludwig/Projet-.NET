@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Carte.cs" />
     <Compile Include="JeuBataille.cs" />
+    <Compile Include="JeuPatience.cs" />
     <Compile Include="MenuGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +63,12 @@
       <DependentUpon>MenuGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="PaquetCarte.cs" />
+    <Compile Include="Patience.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patience.Designer.cs">
+      <DependentUpon>Patience.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bataille.resx">
@@ -69,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGeneral.resx">
       <DependentUpon>MenuGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patience.resx">
+      <DependentUpon>Patience.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

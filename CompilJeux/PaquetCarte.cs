@@ -36,6 +36,32 @@ namespace CompilJeux
             }
         }
 
+        //paquet de X cartes
+        public PaquetCarte(Dictionary<int, int> lespuissances, int début)
+        {
+
+            cartes = new List<Carte>();
+
+            for (int i = début; i <= 13; i++)
+            {
+                //récupération des images
+                Bitmap imtrefle = (Bitmap)CompilJeux.Properties.Resources.ResourceManager.GetObject("_" +
+                i + "_trefle_img");
+                Bitmap impique = (Bitmap)CompilJeux.Properties.Resources.ResourceManager.GetObject("_" +
+                i + "_pique_img");
+                Bitmap imcoeur = (Bitmap)CompilJeux.Properties.Resources.ResourceManager.GetObject("_" +
+                i + "_coeur_img");
+                Bitmap imcarreau = (Bitmap)CompilJeux.Properties.Resources.ResourceManager.GetObject("_" +
+                i + "_carreau_img");
+
+                //ajout des cartes
+                cartes.Add(new Carte(imtrefle, Carte.couleurs.TREFLE, i, lespuissances[i]));
+                cartes.Add(new Carte(impique, Carte.couleurs.PIQUE, i, lespuissances[i]));
+                cartes.Add(new Carte(imcoeur, Carte.couleurs.COEUR, i, lespuissances[i]));
+                cartes.Add(new Carte(imcarreau, Carte.couleurs.CARREAU, i, lespuissances[i]));
+            }
+        }
+
         public PaquetCarte(PaquetCarte pc)
         {
             cartes = new List<Carte> (pc.cartes);
@@ -46,6 +72,24 @@ namespace CompilJeux
             cartes = new List<Carte>(liste);
         }
 
+        public void ajoutAsMAx()
+        {
+            //récupération des images
+            Bitmap imtrefle = (Bitmap)CompilJeux.Properties.Resources.ResourceManager.GetObject("_" +
+            1 + "_trefle_img");
+            Bitmap impique = (Bitmap)CompilJeux.Properties.Resources.ResourceManager.GetObject("_" +
+            1 + "_pique_img");
+            Bitmap imcoeur = (Bitmap)CompilJeux.Properties.Resources.ResourceManager.GetObject("_" +
+            1 + "_coeur_img");
+            Bitmap imcarreau = (Bitmap)CompilJeux.Properties.Resources.ResourceManager.GetObject("_" +
+            1 + "_carreau_img");
+
+            //ajout des cartes
+            cartes.Add(new Carte(imtrefle, Carte.couleurs.TREFLE, 1, 14));
+            cartes.Add(new Carte(impique, Carte.couleurs.PIQUE, 1, 14));
+            cartes.Add(new Carte(imcoeur, Carte.couleurs.COEUR, 1, 14));
+            cartes.Add(new Carte(imcarreau, Carte.couleurs.CARREAU, 1, 14));
+        }
         /**
          * Affichage des cartes
          * */

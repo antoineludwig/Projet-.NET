@@ -23,5 +23,13 @@ namespace CompilJeux
             uneBataille.Show();
         }
 
+        private void patienceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Patience unePatience = new Patience();
+            unePatience.Show();
+            unePatience.WindowState = FormWindowState.Maximized;
+
+        }
+
     }
 }
