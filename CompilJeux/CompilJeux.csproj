@@ -101,9 +101,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="res\01-carreau-img.png" />
     <EmbeddedResource Include="res\01-coeur-img.png" />
     <EmbeddedResource Include="res\01-pique-img.png" />
